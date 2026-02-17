@@ -1,0 +1,246 @@
+/* ===== Font Awesome CDN ===== */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
+
+/* ===== CSS Variables ===== */
+:root {
+  --color-dark: #1a2b3c;
+  --color-teal: #00c9a7;
+  --color-teal-hover: #00b896;
+  --color-white: #ffffff;
+  --color-input-bg: #243447;
+  --color-text-muted: #a0aec0;
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Reset ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Header Wrapper ===== */
+.header {
+  font-family: var(--font-main);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* ===== Top Bar ===== */
+.header__top {
+  background-color: var(--color-dark);
+  padding: 10px 0;
+}
+
+.header__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ===== Logo ===== */
+.header__logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-white);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.header__logo-dot {
+  color: var(--color-teal);
+  font-size: 1rem;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* ===== Search Bar ===== */
+.header__search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-input-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 520px;
+}
+
+.header__search-icon {
+  color: var(--color-text-muted);
+  padding: 0 14px;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.header__search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-white);
+  font-size: 0.95rem;
+  padding: 11px 8px 11px 0;
+  font-family: var(--font-main);
+}
+
+.header__search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.header__search-btn {
+  background-color: var(--color-teal);
+  color: var(--color-dark);
+  border: none;
+  padding: 11px 22px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: var(--font-main);
+  flex-shrink: 0;
+}
+
+.header__search-btn:hover {
+  background-color: var(--color-teal-hover);
+}
+
+/* ===== Action Links ===== */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.header__action-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 7px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.header__action-link i {
+  font-size: 0.85rem;
+}
+
+.header__action-link:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.header__action-link--sell {
+  border: 1.5px solid var(--color-white);
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+
+.header__action-link--sell:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Bottom Sub-Nav ===== */
+.header__bottom {
+  background-color: var(--color-teal);
+  padding: 0;
+}
+
+.header__bottom .header__container {
+  padding: 0 24px;
+}
+
+.header__subnav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.header__subnav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-dark);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 13px 18px;
+  transition: background-color 0.2s ease;
+  border-radius: 0;
+}
+
+.header__subnav-link i {
+  font-size: 0.9rem;
+}
+
+.header__subnav-link:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .header__container {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0 16px;
+  }
+
+  .header__logo {
+    font-size: 1.4rem;
+  }
+
+  .header__search {
+    order: 3;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .header__actions {
+    gap: 4px;
+  }
+
+  .header__action-link span {
+    display: none;
+  }
+
+  .header__action-link {
+    padding: 7px 10px;
+  }
+
+  .header__action-link--sell span {
+    display: none;
+  }
+
+  .header__subnav {
+    gap: 0;
+  }
+
+  .header__subnav-link {
+    padding: 12px 14px;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__subnav-link span {
+    display: none;
+  }
+
+  .header__subnav-link {
+    padding: 12px 16px;
+  }
+}
