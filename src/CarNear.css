@@ -1,0 +1,104 @@
+.car-near-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  max-width: 1100px;
+  margin: 20px auto;
+  font-family: 'Inter', sans-serif;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+}
+
+/* Search Input Styling */
+.search-container {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 15px 15px 15px 50px;
+  border: 1px solid #e0e0e0;
+  border-radius: 50px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-container input:focus {
+  border-color: #00bfa5;
+}
+
+/* Location Cards Grid */
+.location-grid {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto; /* Allows horizontal scrolling if many states */
+  padding-bottom: 10px;
+}
+
+/* Hide scrollbar for Chrome/Safari */
+.location-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.location-item {
+  min-width: 130px;
+  flex: 1;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 20px 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.location-item:hover {
+  border-color: #00bfa5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 191, 165, 0.1);
+}
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  background-color: #f5f9ff;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.icon-circle img {
+  width: 50px;
+  height: auto;
+}
+
+.label {
+  font-size: 12px;
+  color: #777;
+  margin: 0;
+}
+
+.state-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 4px;
+}

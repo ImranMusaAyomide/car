@@ -1,0 +1,292 @@
+/* ===== Imports ===== */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ===== Variables ===== */
+:root {
+  --teal:       #00c9a7;
+  --teal-light: #e6faf6;
+  --dark:       #1a2b3c;
+  --grey-bg:    #f5f6f8;
+  --border:     #e8edf2;
+  --text-muted: #6b7a8d;
+  --white:      #ffffff;
+  --card-w:     260px;
+  --card-radius: 12px;
+  --shadow-sm:  0 2px 12px rgba(0,0,0,0.07);
+  --shadow-hover: 0 8px 28px rgba(0,0,0,0.12);
+}
+
+/* ===== Section ===== */
+.fc-section {
+  width: 100%;
+  background: var(--white);
+  padding: 40px 0 32px;
+  font-family: 'DM Sans', sans-serif;
+  border-top: 1px solid var(--border);
+}
+
+/* ===== Header ===== */
+.fc-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 40px 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.fc-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin: 0 0 6px;
+  letter-spacing: -0.3px;
+}
+
+.fc-sub {
+  font-size: 0.9rem;
+  color: var(--teal);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ===== Slider wrapper ===== */
+.fc-slider-wrap {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ===== Track (scrollable row) ===== */
+.fc-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 8px;
+}
+
+.fc-track::-webkit-scrollbar { display: none; }
+
+/* ===== Card ===== */
+.fc-card {
+  flex: 0 0 var(--card-w);
+  background: var(--white);
+  border-radius: var(--card-radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  animation: cardFadeUp 0.45s ease both;
+}
+
+@keyframes cardFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.fc-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+/* ===== Card Image ===== */
+.fc-card__img-wrap {
+  position: relative;
+  width: 100%;
+  height: 168px;
+  overflow: hidden;
+  background: #e8edf2;
+}
+
+.fc-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.fc-card:hover .fc-card__img {
+  transform: scale(1.04);
+}
+
+/* Badge — bottom left */
+.fc-card__badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(10, 20, 30, 0.78);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  letter-spacing: 0.2px;
+}
+
+/* Pin icon — top right */
+.fc-card__pin {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--teal);
+  font-size: 1rem;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));
+}
+
+/* ===== Card Body ===== */
+.fc-card__body {
+  padding: 14px 14px 12px;
+}
+
+.fc-card__short-title {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0 0 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fc-card__name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 6px;
+}
+
+.fc-card__specs {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.fc-card__dot {
+  color: #c5ced8;
+}
+
+/* Location + Price row */
+.fc-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.fc-card__location {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.fc-card__location i {
+  color: var(--teal);
+  font-size: 0.78rem;
+}
+
+.fc-card__price {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+/* Footer */
+.fc-card__footer {
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fc-card__rocket {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+}
+
+.fc-card__listed {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ===== Arrows ===== */
+.fc-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  color: var(--dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  box-shadow: var(--shadow-sm);
+  transition: background 0.2s, color 0.2s, opacity 0.2s;
+  z-index: 5;
+}
+
+.fc-arrow:hover {
+  background: var(--teal);
+  color: var(--white);
+  border-color: var(--teal);
+}
+
+.fc-arrow--left  { left: 2px;  }
+.fc-arrow--right { right: 2px; }
+
+.fc-arrow--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ===== See All link ===== */
+.fc-see-all-wrap {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 40px 0;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.fc-see-all {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--teal);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.fc-see-all:hover { opacity: 0.75; }
+
+.fc-see-all i { font-size: 0.85rem; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .fc-header,
+  .fc-slider-wrap,
+  .fc-see-all-wrap {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .fc-title { font-size: 1.35rem; }
+}

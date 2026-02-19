@@ -1,0 +1,244 @@
+/* ===== Imports ===== */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ===== Variables ===== */
+:root {
+  --teal:        #00c9a7;
+  --teal-hover:  #00b896;
+  --dark:        #1a2b3c;
+  --border:      #e8edf2;
+  --text-muted:  #6b7a8d;
+  --white:       #ffffff;
+  --bg-light:    #f8f9fb;
+  --card-radius: 12px;
+  --shadow-sm:   0 2px 10px rgba(0,0,0,0.06);
+  --shadow-hover:0 6px 24px rgba(0,0,0,0.11);
+  --card-w:      192px;
+}
+
+/* ===== Outer wrapper ===== */
+.browse-wrap {
+  background: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  padding: 0 0 8px;
+}
+
+/* ===== Each section block ===== */
+.browse-section {
+  max-width: 1280px;
+  margin: 0 auto 12px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 40px 28px;
+  position: relative;
+}
+
+/* ===== Headings ===== */
+.browse-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin: 0 0 8px;
+  letter-spacing: -0.3px;
+}
+
+.browse-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0 0 24px;
+  line-height: 1.6;
+  max-width: 780px;
+}
+
+/* ===== Scroll row ===== */
+.browse-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* ===== Track ===== */
+.browse-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 4px 2px 8px;
+  flex: 1;
+}
+
+.browse-track::-webkit-scrollbar { display: none; }
+
+/* ===== Card ===== */
+.browse-card {
+  flex: 0 0 var(--card-w);
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  background: var(--white);
+  text-decoration: none;
+  color: var(--dark);
+  scroll-snap-align: start;
+  cursor: pointer;
+  overflow: hidden;
+  transition: box-shadow 0.22s ease, transform 0.22s ease, border-color 0.22s;
+  animation: cardIn 0.4s ease both;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.browse-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+  border-color: var(--teal);
+}
+
+/* ===== Card image area ===== */
+.browse-card__img-wrap {
+  width: 100%;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 12px;
+  background: var(--white);
+  box-sizing: border-box;
+}
+
+/* Photo variant (car type section) */
+.browse-card__img-wrap--photo {
+  padding: 0;
+  overflow: hidden;
+  background: var(--bg-light);
+}
+
+/* Brand logos */
+.browse-card__logo {
+  max-width: 120px;
+  max-height: 70px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.browse-card:hover .browse-card__logo {
+  transform: scale(1.06);
+}
+
+/* Car type photos */
+.browse-card__photo {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.browse-card:hover .browse-card__photo {
+  transform: scale(1.06);
+}
+
+/* ===== Card label ===== */
+.browse-card__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--dark);
+  text-align: center;
+  padding: 10px 10px 14px;
+  margin: 0;
+  line-height: 1.35;
+  border-top: 1px solid var(--border);
+  background: var(--white);
+}
+
+/* ===== Scroll arrows ===== */
+.browse-arrow {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  color: var(--dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  box-shadow: var(--shadow-sm);
+  transition: background 0.2s, color 0.2s, border-color 0.2s, opacity 0.2s;
+  z-index: 3;
+  position: relative;
+}
+
+.browse-arrow:hover {
+  background: var(--teal);
+  color: var(--white);
+  border-color: var(--teal);
+}
+
+.browse-arrow--left  { margin-right: 10px; }
+.browse-arrow--right { margin-left:  10px; }
+
+.browse-arrow--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ===== View all link ===== */
+.browse-viewall-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.browse-viewall {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--teal);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.browse-viewall:hover { opacity: 0.72; }
+.browse-viewall i     { font-size: 0.85rem; }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .browse-section {
+    padding: 24px 20px 20px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+
+  .browse-title { font-size: 1.25rem; }
+
+  :root { --card-w: 164px; }
+
+  .browse-card__img-wrap { height: 92px; }
+  .browse-card__photo    { height: 92px; }
+}
+
+@media (max-width: 520px) {
+  .browse-section { padding: 20px 14px 16px; }
+  .browse-title   { font-size: 1.1rem; }
+  .browse-sub     { font-size: 0.82rem; }
+
+  :root { --card-w: 140px; }
+
+  .browse-card__img-wrap { height: 80px; }
+  .browse-card__photo    { height: 80px; }
+  .browse-card__logo     { max-width: 90px; }
+}

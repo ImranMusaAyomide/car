@@ -1,0 +1,117 @@
+:root {
+  --primary-teal: #00bfa5;
+  --text-gray: #666;
+  --border-light: #eee;
+}
+
+.car-container {
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-section h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.header-section p {
+  color: var(--text-gray);
+  margin-bottom: 24px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 30px;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 30px;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-gray);
+  position: relative;
+}
+
+.tab.active {
+  color: var(--primary-teal);
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-teal);
+}
+
+/* Grid Layout */
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.car-card {
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.image-wrapper {
+  height: 180px;
+  background: #f9f9f9;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: left;
+}
+
+.card-content h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.view-btn {
+  width: 100%;
+  padding: 8px;
+  background: white;
+  border: 1px solid var(--primary-teal);
+  color: var(--primary-teal);
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.view-btn:hover {
+  background: var(--primary-teal);
+  color: white;
+}
+
+.footer-link {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.footer-link a {
+  color: var(--primary-teal);
+  text-decoration: none;
+  font-weight: bold;
+}

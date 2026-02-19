@@ -1,0 +1,62 @@
+.car-price-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid #eef0f2;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.03);
+  max-width: 1200px;
+  margin: 20px auto;
+  font-family: 'Inter', sans-serif;
+}
+
+.price-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.price-header p {
+  font-size: 14px;
+  color: #667085;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  max-width: 900px;
+}
+
+/* Multi-column Grid Layout */
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px 24px; 
+}
+
+.price-link {
+  font-size: 14px;
+  color: #475467;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price-link:hover {
+  color: #00bfa5; 
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .price-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .car-price-card {
+    padding: 20px;
+  }
+  .price-grid {
+    grid-template-columns: 1fr; 
+  }
+}

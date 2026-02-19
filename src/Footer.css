@@ -1,0 +1,115 @@
+.footer {
+  background-color: #0b0717; /* Dark navy/black background */
+  color: #ffffff;
+  padding: 60px 80px 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 1.5fr; /* 5 columns with brand info wider */
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+.footer-column h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+  color: #a0a0a0; /* Muted gray for links */
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-column ul li a:hover {
+  color: #ffffff;
+}
+
+/* Brand info column */
+.brand-info .footer-logo {
+  font-size: 24px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.brand-info .footer-logo span {
+  /* Style for the car icon or specific logo letters if needed */
+}
+
+.brand-info p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #a0a0a0;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  border-top: 1px solid #1e1b2e;
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 20px;
+  transition: opacity 0.2s;
+}
+
+.social-icons a:hover {
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .brand-info {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 40px 20px 20px;
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+  .brand-info {
+    grid-column: span 1;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
